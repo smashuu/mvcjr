@@ -1,0 +1,466 @@
+{
+    "project": {
+        "name": "The Foo API",
+        "description": "The Foo API: a library for doing X, Y, and Z",
+        "version": "1.2.1",
+        "url": "http://example.com/"
+    },
+    "files": {
+        "src/MVCJr/Application.php": {
+            "name": "src/MVCJr/Application.php",
+            "modules": {},
+            "classes": {
+                "Application": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/MVCJr/Controller.php": {
+            "name": "src/MVCJr/Controller.php",
+            "modules": {},
+            "classes": {
+                "Controller": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/MVCJr/View.php": {
+            "name": "src/MVCJr/View.php",
+            "modules": {},
+            "classes": {
+                "View": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Application": {
+            "name": "Application",
+            "shortname": "Application",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/MVCJr/Application.php",
+            "line": 5,
+            "description": "An abstract class to define an Application; extend with your own class"
+        },
+        "Controller": {
+            "name": "Controller",
+            "shortname": "Controller",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/MVCJr/Controller.php",
+            "line": 5,
+            "description": "An abstract class to define a Controller; extend with your own class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$application",
+                    "description": "Reference to the main application",
+                    "type": "Application"
+                }
+            ]
+        },
+        "View": {
+            "name": "View",
+            "shortname": "View",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/MVCJr/View.php",
+            "line": 5,
+            "description": "An abstract class to define a View; extend with your own class",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$application",
+                    "description": "Reference to the controller",
+                    "type": "Controller"
+                }
+            ]
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 10,
+            "description": "The root URL of the application",
+            "itemtype": "property",
+            "name": "rootUrl",
+            "type": "{string}",
+            "default": "\"\"",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 17,
+            "description": "The application's default route, if none is provided",
+            "itemtype": "property",
+            "name": "defaultRoute",
+            "type": "{string}",
+            "default": "\"home\"",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 24,
+            "description": "Whether to use a query string paramter to pass the route",
+            "itemtype": "property",
+            "name": "routeByParam",
+            "type": "{boolean}",
+            "default": "false",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 31,
+            "description": "The query string parameter that holds the route",
+            "itemtype": "property",
+            "name": "routeParam",
+            "type": "{string}",
+            "default": "\"p\"",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 38,
+            "description": "The current route, as a string",
+            "itemtype": "property",
+            "name": "route",
+            "type": "{string}",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 44,
+            "description": "The current scheme (HTTP/HTTPS), as a string",
+            "itemtype": "property",
+            "name": "scheme",
+            "type": "{string}",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 50,
+            "description": "The current GET query, as a array",
+            "itemtype": "property",
+            "name": "queryParams",
+            "type": "{array}",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 57,
+            "description": "Set the application's default route, if none is provided",
+            "itemtype": "method",
+            "name": "setDefaultRoute",
+            "params": [
+                {
+                    "name": "route",
+                    "description": "The route to set",
+                    "type": "String"
+                }
+            ],
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 67,
+            "description": "Tells the application to use the URL as the route (default)",
+            "itemtype": "method",
+            "name": "routeIsUrl",
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 76,
+            "description": "Tells the application to use a query string paramter to pass the route",
+            "itemtype": "method",
+            "name": "routeByParam",
+            "params": [
+                {
+                    "name": "queryParam",
+                    "description": "The query string parameter that holds the route",
+                    "type": "String"
+                }
+            ],
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 87,
+            "description": "Code to execute before the application runs; extend the class to override",
+            "itemtype": "method",
+            "name": "setup",
+            "access": "protected",
+            "tagname": "",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 98,
+            "description": "Set the query parameters; if the route is not specified, it will be determined from the current URL's query string",
+            "itemtype": "method",
+            "name": "setQueryParams",
+            "params": [
+                {
+                    "name": "$params",
+                    "description": "The route to set",
+                    "type": "Array",
+                    "optional": true
+                }
+            ],
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 110,
+            "description": "Set the application route; if the route is not specified, it will be determined from the current URL",
+            "itemtype": "method",
+            "name": "setRoute",
+            "params": [
+                {
+                    "name": "$route",
+                    "description": "The route to set",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 122,
+            "description": "Set the URL scheme; if the scheme is not specified, it will be determined from the current URL",
+            "itemtype": "method",
+            "name": "setScheme",
+            "params": [
+                {
+                    "name": "scheme",
+                    "description": "The scheme to set",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 135,
+            "description": "Optional, code to execute after the application runs; extend the class to override",
+            "itemtype": "method",
+            "name": "cleanup",
+            "access": "protected",
+            "tagname": "",
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 142,
+            "description": "Execute any setup code, run the route handler, then execute any cleanup code",
+            "itemtype": "method",
+            "name": "run",
+            "return": {
+                "description": "The generated output",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 156,
+            "description": "An abstract method to handle routing; extend the class to specify",
+            "itemtype": "method",
+            "name": "doRoute",
+            "access": "protected",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "route",
+                    "description": "The route to transform",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The generated output",
+                "type": "String"
+            },
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 165,
+            "description": "Transforms a route string into a full URL, preserving query string items",
+            "itemtype": "method",
+            "name": "urlFromRoute",
+            "params": [
+                {
+                    "name": "route",
+                    "description": "The route to transform",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The generated URL",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 187,
+            "description": "Getter for the current route",
+            "itemtype": "method",
+            "name": "getCurrentRoute",
+            "return": {
+                "description": "The generated route",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Application.php",
+            "line": 197,
+            "description": "Getter for the application's root URL",
+            "itemtype": "method",
+            "name": "getRootUrl",
+            "return": {
+                "description": "The root URL",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Application"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 20,
+            "description": "An abstract method to produce output; extend the class to specify",
+            "itemtype": "method",
+            "name": "execute",
+            "return": {
+                "description": "The generated output",
+                "type": "String"
+            },
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 27,
+            "description": "Adds a model to the controller",
+            "itemtype": "method",
+            "name": "addModel",
+            "params": [
+                {
+                    "name": "$name",
+                    "description": "The stored name of the model",
+                    "type": "String"
+                },
+                {
+                    "name": "$name",
+                    "description": "The model to add",
+                    "type": "Array|stdObj"
+                }
+            ],
+            "final": 1,
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 38,
+            "description": "Retrieve a single model by name",
+            "itemtype": "method",
+            "name": "getModel",
+            "params": [
+                {
+                    "name": "$name",
+                    "description": "The stored name of the model",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The returned model",
+                "type": "Array|stdObj"
+            },
+            "final": 1,
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 49,
+            "description": "Retrive all the added models, to pass to the view",
+            "itemtype": "method",
+            "name": "getContext",
+            "return": {
+                "description": "The context to pass",
+                "type": "StdClass"
+            },
+            "final": 1,
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 71,
+            "description": "Transforms a route string into a full URL, preserving query string items (via the Application)",
+            "itemtype": "method",
+            "name": "urlFromRoute",
+            "params": [
+                {
+                    "name": "$route",
+                    "description": "The route to transform",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The generated URL",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/Controller.php",
+            "line": 82,
+            "description": "Pass the models' context to the view, and return the rendered output",
+            "itemtype": "method",
+            "name": "renderView",
+            "return": {
+                "description": "The generated output",
+                "type": "String"
+            },
+            "final": 1,
+            "class": "Controller"
+        },
+        {
+            "file": "src/MVCJr/View.php",
+            "line": 18,
+            "description": "An abstract method to produce output; extend the class to specify",
+            "itemtype": "method",
+            "name": "render",
+            "return": {
+                "description": "The generated output",
+                "type": "String"
+            },
+            "class": "View"
+        }
+    ],
+    "warnings": []
+}

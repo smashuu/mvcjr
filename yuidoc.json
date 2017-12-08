@@ -1,0 +1,12 @@
+{
+  "name": "MVCJr",
+  "description": "A minimal, unopinionated MVC library",
+  "version": "0.1",
+  "url": "http://github.com/smashuu/mvcjr",
+  "options": {
+      "outdir": "./doc",
+      "paths": ["./src"],
+      "exclude": "vendor,tests",
+      "extension": ".php"
+  }
+}
